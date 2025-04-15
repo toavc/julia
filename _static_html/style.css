@@ -1,0 +1,191 @@
+/* 
+   style.css - Julia Documentation UI
+   A clean, modern stylesheet for the Julia documentation website
+*/
+
+/* --- Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+/* --- Layout --- */
+.container {
+    display: flex;
+    min-height: 100vh;
+    max-width: 1170px; /* Limit total width */
+    margin: 0 auto; /* Center the container */
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 250px;
+    /* background: linear-gradient(to bottom, #9558B2, #4063D8); */ /* Original gradient */
+    background-color: #f4f4f4; /* Lighter background */
+    color: #555; /* Darker text for contrast */
+    padding: 20px 0;
+    /* position: fixed; */ /* Removed fixed positioning */
+    position: sticky; /* Make sidebar sticky */
+    top: 0; /* Stick to the top */
+    height: 100vh; /* Necessary for sticky positioning within viewport height */
+    overflow-y: auto; /* Allow scrolling within sidebar if needed */
+    align-self: flex-start; /* Prevent stretching if content is short */
+}
+
+.sidebar .logo {
+    padding: 0 20px 20px;
+    border-bottom: 1px solid #ddd; /* Adjusted border color */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sidebar .logo h2 {
+    font-size: 2em;
+    font-weight: 300;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    color: #555; /* Adjusted link color */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.sidebar nav ul li a:hover, 
+.sidebar nav ul li a.active {
+    background-color: #e0e0e0; /* Adjusted hover/active background */
+    color: #333; /* Adjusted hover/active text color */
+    border-left: 3px solid #389826;
+}
+
+/* --- Main Content --- */
+.content {
+    flex: 1;
+    padding: 30px;
+    /* margin-left: 250px; */ /* Removed fixed margin */
+    /* max-width: 1200px; */ /* Removed max-width, handled by container */
+}
+
+header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+header h1 {
+    font-weight: 300;
+    color: #9558B2;
+    font-size: 2.2em;
+}
+
+section {
+    margin-bottom: 40px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+    color: #4063D8;
+    margin-bottom: 20px;
+    font-weight: 400;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+section ul {
+    list-style: none;
+}
+
+section ul li {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dotted #eee;
+}
+
+section ul li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+section ul li a {
+    color: #389826;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+section ul li a:hover {
+    color: #9558B2;
+}
+
+section ul li p {
+    color: #666;
+    font-size: 0.95em;
+}
+
+/* --- Responsive Design --- */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 10px 0;
+    }
+    
+    .sidebar .logo {
+        padding: 10px 20px;
+        margin-bottom: 10px;
+    }
+    
+    .content {
+        margin-left: 0;
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 1.8em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    section {
+        padding: 15px;
+    }
+    
+    section h2 {
+        font-size: 1.3em;
+    }
+    
+    section ul li a {
+        font-size: 1em;
+    }
+}
